@@ -1,0 +1,10 @@
+{
+    "name": "cypress-demo-with-html",
+    "version": "1.0.0",
+    "dependencies": {
+        "cypress": "^7.6.0"
+    },
+    "devDependencies": {
+        "cypress-terminal-report": "^3.4.2"
+    }
+}

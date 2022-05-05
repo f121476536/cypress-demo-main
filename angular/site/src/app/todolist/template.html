@@ -1,0 +1,3 @@
+<app-nav [activeRoute]="filter"></app-nav>
+<app-todolist-table [dataArr]="dataArr" [filter]="filter"></app-todolist-table>
+<app-todolist-form *ngIf="filter === 'all'"></app-todolist-form>

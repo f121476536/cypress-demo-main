@@ -1,0 +1,9 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(45deg, #32ff92 0%,#2bc3ff 83%);
+    min-height:100vh;
+}

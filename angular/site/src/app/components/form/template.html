@@ -1,0 +1,34 @@
+<form [formGroup]="form"
+novalidate>
+
+	<mat-form-field class="mat-form-field-type">
+		<mat-label>Type</mat-label>
+		<mat-select formControlName="type"
+								placeholder="Type">
+			<mat-option *ngFor="let type of typeSelections | keyvalue" [value]="type.key">
+				{{ type.value }}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+
+	<mat-form-field class="mat-form-field-content">
+		<input matInput 
+					formControlName="content" 
+					placeholder="Content">
+	</mat-form-field>
+
+	<button type="button" 
+		color="primary" 
+		id="create-button" 
+		mat-raised-button 
+		(click)="add()">
+		Add
+	</button>
+
+	<button type="button" 
+		id="reset-button" 
+		(click)="reset()" 
+		mat-button>
+		Reset
+	</button>
+</form>

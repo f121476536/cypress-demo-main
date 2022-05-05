@@ -1,0 +1,37 @@
+<mat-table [dataSource]="getDataSource()" 
+    matSort 
+    [matSortActive]="'isDone'"
+    matSortDirection="asc">
+    <ng-container matColumnDef="isDone">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let data">
+            <ng-container>
+                <mat-checkbox [(ngModel)]="data.isDone" (ngModelChange)="checkListData(data)"></mat-checkbox>
+            </ng-container>
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="type">
+        <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+        <mat-cell *matCellDef="let data">{{ getDataType(data.type) }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="content">
+        <mat-header-cell *matHeaderCellDef>Content</mat-header-cell>
+        <mat-cell *matCellDef="let data">{{ data.content }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="timestamp">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Create Time</mat-header-cell>
+        <mat-cell *matCellDef="let data">{{ toDate(data.timestamp) }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let data">
+            <button mat-icon-button (click)="delete(data)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="['isDone', 'type', 'content', 'timestamp', 'delete']">
+    </mat-header-row>
+    <mat-row *matRowDef="let data; columns: ['isDone', 'type', 'content', 'timestamp', 'delete']" [ngClass]="{'columns-isDone': data.isDone}">
+    </mat-row>
+</mat-table>

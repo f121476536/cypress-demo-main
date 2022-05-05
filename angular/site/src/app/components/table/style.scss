@@ -1,0 +1,44 @@
+$isdone-width: 6%;
+$type-width: 20%;
+$content-width: 50%;
+$timestamp-width: 18%;
+$delete-width: 6%;
+
+mat-table {
+	width: 80vw;
+	margin: 0 auto;
+	border-radius: 4px 4px 0 0;
+}
+
+mat-header-row{
+	border-radius: 4px 4px 0 0;
+}
+
+.mat-cell, .mat-header-cell{
+	box-sizing: border-box;
+}
+
+.mat-column-isdone {
+	width: $isdone-width;
+	flex: 0 0 $isdone-width !important;
+}
+.mat-column-type {
+	width: $type-width;
+	flex: 0 0 $type-width !important;
+}
+.mat-column-content {
+	width: $content-width;
+	flex: 0 0 $content-width !important;
+}
+.mat-column-timestamp {
+	width: $timestamp-width;
+	flex: 0 0 $timestamp-width !important;
+}
+.mat-column-delete {
+	width: $delete-width;
+	flex: 0 0 $delete-width !important;
+}
+
+.columns-isDone{
+	background: #f3f3f3;
+}

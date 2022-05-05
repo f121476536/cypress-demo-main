@@ -1,0 +1,10 @@
+build-job:
+  stage: build
+  image: life1347/cypress-ci:0.1
+  script:
+    - cd angular/site
+    - mkdir -p dist/site
+    - npm ci
+    - ng serve &
+    - sleep 30
+    - npm run cy:run
